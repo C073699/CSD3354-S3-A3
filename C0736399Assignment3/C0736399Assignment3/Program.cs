@@ -18,8 +18,11 @@ namespace C0736399Assignment3
     }
     class TextProcessing
     {
+        Queue<string> names = new Queue<string>();
         public void Run()
         {
+            
+            // open the names file and acess the data
             using (StreamReader file = new StreamReader("C:/Users/gurin_9drx78b/Assignment3/C0736399Assignment3/C0736399Assignment3/names.txt"))
             {
                 int counter = 0;
@@ -27,7 +30,7 @@ namespace C0736399Assignment3
 
                 while ((ln = file.ReadLine()) != null)
                 {
-                    Console.WriteLine(ln);
+                    names.Enqueue(ln);
                     counter++;
                 }
                 file.Close();
